@@ -11,4 +11,5 @@ add_executable(WhiteBeltStepik
 #        1/devide.cpp 1/devide_solution.cpp
 #        1/good_cost.cpp
 #        1/even_number.cpp
-        1/second_input.cpp)
+#        1/second_input.cpp
+        1/nod.cpp)
