@@ -11,13 +11,14 @@ int main()
     {
         if (str[i] == 'f')
         {
-            if (!first)
+            if (first)
             {
-                first = true;
+                pos = i;
+                break;
             }
             else
             {
-                pos = i;
+                first = true;
             }
         }
     }
@@ -25,9 +26,10 @@ int main()
     {
         std::cout << "-2" << std::endl;
     }
-    else if (first)
+    else
     {
-
+        int res = pos < 0 ? -1 : pos;
+        std::cout << res << std::endl;
     }
     return 0;
 }
