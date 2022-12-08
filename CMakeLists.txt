@@ -12,4 +12,5 @@ add_executable(WhiteBeltStepik
 #        1/good_cost.cpp
 #        1/even_number.cpp
 #        1/second_input.cpp
-        1/nod.cpp)
+#        1/nod.cpp
+        1/decimal_to_binary.cpp)
