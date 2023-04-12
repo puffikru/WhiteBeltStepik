@@ -1,0 +1,1 @@
+add_executable(test_move_strings test.cpp)
