@@ -1,0 +1,1 @@
+add_executable(test_monthly_affairs monthly_affairs.cpp)
