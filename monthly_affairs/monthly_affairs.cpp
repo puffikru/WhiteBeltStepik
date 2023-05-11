@@ -12,7 +12,7 @@ int main()
     vector<int> day_of_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int month_number = 0;
     vector<vector<string>> current_month(day_of_month[month_number]);
-    cout << current_month.size() << endl;
+
     cin >> Q;
     for (int i = 0; i < Q; ++i)
     {
@@ -27,10 +27,12 @@ int main()
         else if (command == "DUMP")
         {
             cin >> day;
+            cout << current_month[day - 1].size() << " ";
             for (string todo : current_month[day - 1])
             {
                 cout << todo << " ";
             }
+            cout << endl;
         } 
         else if (command == "NEXT")
         {
@@ -43,55 +45,29 @@ int main()
             {
                 next_month = month_number + 1;
             }
-            for (int j = 0; j < current_month.size(); ++j)
-            {
-                for (int i = 0; i < current_month[j].size(); ++i)
-                {
-                    cout << j << " " << current_month[j][i] << endl;
-                }
-            }
-            cout << "month days: " << month_number << endl;
-            cout << "next month days: " << next_month << endl;
-            int optional_day_count = day_of_month[next_month] - day_of_month[month_number];
-            cout << "optional days: " << optional_day_count << endl;
-            cout << "days of the next month: " << day_of_month[next_month] << endl;
-            if (day_of_month[next_month] > day_of_month[month_number])
+       
+            int optional_day_count = day_of_month.at(next_month) - day_of_month.at(month_number);
+         
+            if (day_of_month.at(next_month) > day_of_month.at(month_number))
             {
                 vector<vector<string>> optional_days(abs(optional_day_count));
                 current_month.insert(end(current_month), begin(optional_days), end(optional_days));
             }
             else
             {
-                cout << "next month days is less, then current" << endl;
                 vector<string> last_day;
-                for (int i = current_month.size() - abs(optional_day_count); i <= current_month.size(); ++i)
+                for (int i = current_month.size() - abs(optional_day_count) - 1; i <= current_month.size() - 1; ++i)
                 {
-                    for (string s : current_month[i])
+                    for (string s : current_month.at(i))
                     {
                         last_day.push_back(s);
                     }
                 }
 
-                cout << "before resize: " << current_month.size() << endl;
-                for (int j = 0; j < current_month.size(); ++j)
-                {
-                    for (int i = 0; i < current_month[j].size(); ++i)
-                    {
-                        cout << j << " " << current_month[j][i] << endl;
-                    }
-                }
                 current_month.resize(day_of_month[next_month]);
-                current_month[current_month.size() - 1] = last_day;
+                current_month.at(current_month.size() - 1) = last_day;
             }
-
-            cout << "after resize: " << current_month.size() << endl;
-            for (int j = 0; j < current_month.size(); ++j)
-            {
-                for (int i = 0; i < current_month[j].size(); ++i)
-                {
-                    cout << j << " " << current_month[j][i] << endl;
-                }
-            }
+            month_number = next_month;
         }
     }
     return 0;
