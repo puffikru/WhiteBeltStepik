@@ -1,0 +1,1 @@
+add_executable(test_bus_stops2 bus_stops2.cpp)
