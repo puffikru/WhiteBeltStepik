@@ -1,0 +1,1 @@
+add_executable(test_unique_string unique_string.cpp)
