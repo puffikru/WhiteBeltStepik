@@ -1,0 +1,1 @@
+add_executable(test_sort_wreg sort_wreg.cpp)
