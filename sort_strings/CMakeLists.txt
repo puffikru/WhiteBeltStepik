@@ -1,0 +1,1 @@
+add_executable(test_sort_strings sort_strings.cpp)
