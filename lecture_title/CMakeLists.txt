@@ -1,0 +1,1 @@
+add_executable(test_lecture_title lecture_title.cpp)
