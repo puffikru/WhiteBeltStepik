@@ -1,0 +1,1 @@
+add_executable(test_names2 names2.cpp)
