@@ -1,0 +1,1 @@
+add_executable(test_function2 function2.cpp)
