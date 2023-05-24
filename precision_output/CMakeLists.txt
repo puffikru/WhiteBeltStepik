@@ -1,0 +1,1 @@
+add_executable(test_precision_output precision_output.cpp)
