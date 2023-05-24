@@ -1,0 +1,1 @@
+add_executable(test_files2 files2.cpp)
