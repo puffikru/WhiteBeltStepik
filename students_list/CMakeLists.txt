@@ -1,0 +1,1 @@
+add_executable(test_students_list students_list.cpp)
