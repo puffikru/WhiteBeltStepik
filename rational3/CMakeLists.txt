@@ -1,0 +1,1 @@
+add_executable(test_rational3 rational3.cpp)
