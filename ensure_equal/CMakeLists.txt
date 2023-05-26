@@ -1,0 +1,1 @@
+add_executable(test_ensure_equal ensure_equal.cpp)
